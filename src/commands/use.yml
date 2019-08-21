@@ -33,7 +33,7 @@ parameters:
     description: >
       What should be done with the commit information created by the
       `reconstruct` command/job? For an example, see the following:
-      https://circleci.com/orbs/registry/orb/iynere/compare-url#usage-simple-monorepo-flow-using-command
+      https://circleci.com/orbs/registry/orb/makerbot/compare-url#usage-simple-monorepo-flow-using-command
 
   shell-options:
     type: string

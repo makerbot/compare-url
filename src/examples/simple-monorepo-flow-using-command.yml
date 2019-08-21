@@ -9,7 +9,7 @@ usage:
   version: 2.1
 
   orbs:
-    compare-url: iynere/compare-url@x.y.z
+    compare-url: makerbot/compare-url@x.y.z
 
   jobs:
     publish:

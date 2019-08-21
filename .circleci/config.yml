@@ -1,8 +1,8 @@
 version: 2.1
 
 orbs:
-  circle-compare-url-test: iynere/compare-url@dev:alpha
-  circle-compare-url: iynere/compare-url@1.1.0
+  circle-compare-url-test: makerbot/compare-url@dev:alpha
+  circle-compare-url: makerbot/compare-url@1.1.0
   cli: circleci/circleci-cli@0.1.2
   orb-tools: circleci/orb-tools@8.13.1
   queue: eddiewebb/queue@1.1.1
@@ -55,13 +55,13 @@ jobs:
           custom-logic: |
             if [[ $(git diff $COMMIT_RANGE --name-status | \
                 grep -e "A      src/commands" -e "A      src/jobs") ]]; then
-              circleci orb publish promote iynere/compare-url@dev:${CIRCLE_SHA1:0:7} major --token $CIRCLE_TOKEN
+              circleci orb publish promote makerbot/compare-url@dev:${CIRCLE_SHA1:0:7} major --token $CIRCLE_TOKEN
             elif [[ $(git diff $COMMIT_RANGE --name-status | \
                 grep -e "src/commands" -e "src/jobs") ]]; then
-              circleci orb publish promote iynere/compare-url@dev:${CIRCLE_SHA1:0:7} minor --token $CIRCLE_TOKEN
+              circleci orb publish promote makerbot/compare-url@dev:${CIRCLE_SHA1:0:7} minor --token $CIRCLE_TOKEN
             elif [[ $(git diff $COMMIT_RANGE --name-status | \
                 grep -e "src/examples" -e "src/executors" -e "src/@orb.yml") ]]; then
-              circleci orb publish promote iynere/compare-url@dev:${CIRCLE_SHA1:0:7} patch --token $CIRCLE_TOKEN
+              circleci orb publish promote makerbot/compare-url@dev:${CIRCLE_SHA1:0:7} patch --token $CIRCLE_TOKEN
             else
               echo "No changes to orb source; skipping publishing"
             fi
@@ -94,7 +94,7 @@ workflows:
 
       - orb-tools/publish-dev:
           context: token
-          orb-name: iynere/compare-url
+          orb-name: makerbot/compare-url
           requires:
             - orb-tools/pack
 
