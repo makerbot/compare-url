@@ -60,4 +60,3 @@ steps:
         echo "Commit range: $COMMIT_RANGE"
 
         <<parameters.custom-logic>>
-
