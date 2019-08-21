@@ -21,6 +21,7 @@ usage:
         - compare-url/use:
             step-name: Publish modified orbs
             attach-workspace: true
+            shell-options: /bin/sh -ueo pipefail
             command: |
               for ORB in folder-containing-orb-subdirs/*/; do
 
