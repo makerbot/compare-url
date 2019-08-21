@@ -192,7 +192,7 @@ steps:
               # 2.5 make sure job is not from a rerun workflow (same commit)
               ! $(grep "\"vcs_revision\" : \"$CIRCLE_SHA1\"" JOB_OUTPUT) && \
               # make sure we are on the same branch as $CIRCLE_BRANCH
-              # (we've already ruled out that this is a brand-new branch)
+              # (we have already ruled out that this is a brand-new branch)
               $(grep "\"branch\" : \"$CIRCLE_BRANCH\"" JOB_OUTPUT) ]]; then
 
               echo "----------------------------------------------------------------------------------------------------"
